@@ -1,0 +1,35 @@
+{
+  "products": [
+    {
+      "productName": "Basic",
+      "productSKU": "PROD-1",
+      "productPrice": 5004,
+      "id": 1
+    },
+    {
+      "productName": "Checlk",
+      "productSKU": "PPEPR111",
+      "productPrice": 2222,
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "userName": "Product User",
+      "email": "product.user@mail.com",
+      "password": "Product1",
+      "token": "TOKEN-1-TOKEN"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "quantity": 2,
+      "productId": 1,
+      "orderPrice": 1000,
+      "address": "Silver",
+      "orderDate": "20/02/2021"
+    }
+  ]
+}

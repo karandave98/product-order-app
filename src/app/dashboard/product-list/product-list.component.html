@@ -1,0 +1,46 @@
+<h4>
+    Products List
+</h4>
+
+<div>
+    <b>
+        Filter Using Product Name
+    </b>: 
+    <input type="text" name = "filterProdName" id = "filetProductId" #filterProductId>
+</div>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Product SKU</th>
+                <th scope="col">Product Prices</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let item of productsList; let i = index">
+                <tr>
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{item.productName}}</td>
+                    <td>{{item.productSKU}}</td>
+                    <td>{{item.productPrice | currency:"INR":"symbol"}}</td>
+                    <td>
+                        <a role="button" class="px-2" title="Edit" (click) = "editProduct(item)">
+                            <i class="bi bi-pencil" style="color: #4ba7e9;"></i>
+                        </a>
+                        <a role="button" class="px-2" title="Delete" (click) = "deleteProduct(item, i)">
+                            <i class="bi bi-trash" style="color: #4ba7e9;"></i>
+                        </a>
+                    </td>
+                </tr>
+            </ng-container>
+            <ng-container *ngIf="productsList.length <= 0">
+                <tr>
+                    <td colspan="5" style="text-align: center;font-weight: bolder;">No Records Found</td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>

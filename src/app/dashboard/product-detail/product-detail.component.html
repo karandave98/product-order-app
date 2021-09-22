@@ -1,0 +1,43 @@
+ <h4>{{isUpdate? 'Update' :'Add'}} Product</h4>
+ <div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <!-- <img alt="CMS Photo" src="../../../assets/images/cms-headlines.jpg" class="imageHead"> -->
+        </div>
+        <div class="col-sm-6">
+            <div class="d-flex justify-content-center form_container">
+                <form  [formGroup]="productForm" autocomplete="off" (ngSubmit)="submitProductData()">
+                    <div class="input-group mb-3">
+                        <div class="input-group-append">
+                            <span class="input-group-text">Product Name: </span>
+                        </div>
+                        <input type="text" name="" class="form-control input_user" 
+                        value="" placeholder="Product Name" maxlength="100" formControlName="productName"
+                        required autocomplete="off">
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-append">
+                            <span class="input-group-text">Product SKU: </span>
+                        </div>
+                        <input type="text" name="" class="form-control input_pass" 
+                             placeholder="Product SKU" maxlength="15" formControlName="productSKU" required>
+                    </div>
+                    <div class="input-group mb-2">
+                        <div class="input-group-append">
+                            <span class="input-group-text">Product Price: </span>
+                        </div>
+                        <input type="number" name="" class="form-control input_pass"  min="0"
+                             placeholder="Product Price"  formControlName="productPrice" required>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3 login_container">
+                        <button type="submit" name="button" class="btn login_btn" >{{isUpdate ? 'Update' :'Add'}} Product</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+        <div class="col-sm-3">
+            <!-- <img alt="CMS Photo" src="../../../assets/images/cms-headlines.jpg" class="imageHead"> -->
+        </div>
+    </div>
+</div>

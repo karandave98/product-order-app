@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light light-blue-bg">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['/dashboard']" routerLinkActive="router-link-active" >Product</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngIf="isUserLoggedIn">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/dashboard']" [routerLinkActive] = "'active'">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/dashboard/add-product']" [routerLinkActive] = "'active'">Add Products</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/dashboard']" [routerLinkActive] = "'active'">Pricing</a>
+          </li> -->
+        </ul>
+        <span class="navbar-text" *ngIf="isUserLoggedIn">
+          <a role="button" (click) = "logOut()">Logout&nbsp;<i class="bi bi-box-arrow-right"></i></a>
+        </span>
+      </div>
+    </div>
+  </nav>
